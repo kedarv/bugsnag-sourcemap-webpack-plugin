@@ -47,6 +47,7 @@ class BugsnagSourceMapPlugin {
   }
 
   uploadSourceMaps(assets, compilation) {
+    console.log(assets);
     async.each(
       assets,
       (asset, callback) => {

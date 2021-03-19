@@ -1,6 +1,6 @@
 {
-  "name": "bugsnag-sourcemap-webpack-plugin",
-  "version": "0.9.8",
+  "name": "@kedarv/bugsnag-sourcemap-webpack-plugin",
+  "version": "0.9.10",
   "description": "A Webpack plugin to upload sourcemaps to Bugsnag after build",
   "main": "lib/index.js",
   "files": [
@@ -33,13 +33,13 @@
     "sourcemap",
     "source-map"
   ],
-  "homepage": "https://github.com/bakunyo/bugsnag-sourcemap-webpack-plugin",
-  "bugs": "https://github.com/bakunyo/bugsnag-sourcemap-webpack-plugin/issues",
+  "homepage": "https://github.com/kedarv/bugsnag-sourcemap-webpack-plugin",
+  "bugs": "https://github.com/kedarv/bugsnag-sourcemap-webpack-plugin/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bakunyo/bugsnag-sourcemap-webpack-plugin"
+    "url": "https://github.com/kedarv/bugsnag-sourcemap-webpack-plugin"
   },
-  "author": "bakunyo <izuta.hiroyuki@gmail.com> (https://github.com/bakunyo)",
+  "author": "kedarv (https://github.com/kedarv)",
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.17.0",
