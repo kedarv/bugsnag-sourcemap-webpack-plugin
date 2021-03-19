@@ -92,6 +92,8 @@ class BugsnagSourceMapPlugin {
         } else {
           console.log('BugsnagSourceMapPlugin Warning: ', err);
         }
+      } else {
+        console.log({'sourceMapPath': sourceMapPath, 'minifiedUrl': minifiedUrl})
       }
 
       if (this.removeSourceMap) {
