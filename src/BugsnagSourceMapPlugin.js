@@ -47,7 +47,7 @@ class BugsnagSourceMapPlugin {
   }
 
   uploadSourceMaps(assets, compilation) {
-    console.log(assets);
+    console.dir(assets, {'maxArrayLength': null});
     async.each(
       assets,
       (asset, callback) => {
@@ -63,6 +63,13 @@ class BugsnagSourceMapPlugin {
   }
 
   uploadSourceMap(sourceFile, sourceMap, compilation) {
+    console.log({
+      'sourceFile': sourceFile,
+      'sourceMap': sourceMap,
+      'sourceFilePath': compilation.assets[sourceFile].existsAt,
+      'sourceMapPath': compilation.assets[sourceMap].existsAt,
+    })
+
     const minifiedUrl = `${this.publicPath}/${sourceFile}`;
     const sourceMapPath = compilation.assets[sourceMap].existsAt;
     const sourceFilePath = compilation.assets[sourceFile].existsAt;
@@ -82,6 +89,7 @@ class BugsnagSourceMapPlugin {
       request.attach('minifiedFile', sourceFilePath);
     }
 
+    console.log("about to upload " + sourceMapPath);
     request.end((err) => {
       if (err) {
         if (!this.silent) {
@@ -98,6 +106,7 @@ class BugsnagSourceMapPlugin {
       }
 
       if (this.removeSourceMap) {
+        console.log("deleting " + sourceMapPath);
         fs.unlinkSync(sourceMapPath);
       }
     });
